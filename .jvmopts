@@ -1,0 +1,7 @@
+-Xms2048m
+-Xmx2560m
+-XX:ReservedCodeCacheSize=64m
+-XX:+CMSClassUnloadingEnabled
+-XX:+UseConcMarkSweepGC
+-XX:+ExitOnOutOfMemoryError
+-Dkamon.auto-start=true

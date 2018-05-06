@@ -1,5 +1,4 @@
 import com.typesafe.sbt.packager.Keys.scriptClasspath
-import com.typesafe.sbt.SbtScalariform.autoImport.scalariformFormat
 import com.typesafe.sbt.web.SbtWeb.autoImport._
 import play.Play.autoImport._
 import play.sbt.PlayImport._
@@ -48,9 +47,6 @@ TwirlKeys.templateImports ++= Seq(
   "lila.common.String.html._"
 )
 resourceDirectory in Assets := (sourceDirectory in Compile).value / "assets"
-
-scalariformPreferences := scalariformPrefs(scalariformPreferences.value)
-excludeFilter in scalariformFormat := "*Routes*"
 
 lazy val modules = Seq(
   common, db, rating, user, security, hub, socket,

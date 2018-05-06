@@ -1,7 +1,5 @@
-import com.typesafe.sbt.SbtScalariform.autoImport.scalariformPreferences
 import play.sbt.Play.autoImport._
 import sbt._, Keys._
-import scalariform.formatter.preferences._
 
 object BuildSettings {
 
@@ -21,13 +19,8 @@ object BuildSettings {
     // disable publishing the main API jar
     publishArtifact in (Compile, packageDoc) := false,
     // disable publishing the main sources jar
-    publishArtifact in (Compile, packageSrc) := false,
-    scalariformPreferences := scalariformPrefs(scalariformPreferences.value)
+    publishArtifact in (Compile, packageSrc) := false
   )
-
-  def scalariformPrefs(prefs: IFormattingPreferences) = prefs
-    .setPreference(DanglingCloseParenthesis, Force)
-    .setPreference(DoubleIndentConstructorArguments, true)
 
   def defaultDeps = Seq(scalaz, chess, scalalib, jodaTime, ws, java8compat, specs2, specs2Scalaz)
 
