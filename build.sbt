@@ -361,8 +361,8 @@ lazy val teamSearch = module("teamSearch", Seq(common, hub, team, search)).setti
 lazy val i18n = module("i18n", Seq(common, db, user, hub)).settings(
   sourceGenerators in Compile += Def.task {
     MessageCompiler(
-      sourceDir = new File("translation/source"),
-      destDir = new File("translation/dest"),
+      sourceDir = Keys.baseDirectory.in(ThisBuild).value./("translation")./("source"),
+      destDir = Keys.baseDirectory.in(ThisBuild).value./("translation")./("dest"),
       dbs = List("site", "arena", "emails", "learn", "activity", "coordinates"),
       compileTo = (sourceManaged in Compile).value / "messages"
     )
