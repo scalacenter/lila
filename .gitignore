@@ -1,4 +1,3 @@
-conf/application.conf
 bin/dev
 bin/dev.bat
 logs
