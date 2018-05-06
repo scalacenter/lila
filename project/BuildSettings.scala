@@ -43,6 +43,7 @@ object BuildSettings {
       .settings(
         version := "2.0",
         libraryDependencies ++= defaultDeps,
+        compileOrder := CompileOrder.JavaThenScala,
         buildSettings,
         srcMain
       )
